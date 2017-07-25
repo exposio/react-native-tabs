@@ -55,7 +55,7 @@ class Tabs extends Component {
             testID={el.props.testID}
             style={[
               styles.iconView,
-              this.props.iconStyle,
+              el.props.style,
               (el.props.name || el.key) == selected
                 ? this.props.selectedIconStyle || el.props.selectedIconStyle || {}
                 : {}
