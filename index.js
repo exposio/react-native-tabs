@@ -55,7 +55,6 @@ class Tabs extends Component {
             testID={el.props.testID}
             style={[
               styles.iconView,
-              el.props.style,
               (el.props.name || el.key) == selected
                 ? this.props.selectedIconStyle || el.props.selectedIconStyle || {}
                 : {}
@@ -67,7 +66,7 @@ class Tabs extends Component {
             {selected == (el.props.name || el.key)
               ? React.cloneElement(el, {
                   selected: true,
-                  style: [el.props.style, this.props.selectedStyle, el.props.selectedStyle]
+                  style: [el.props.style, this.props.selectedViewStyle, el.props.selectedViewStyle]
                 })
               : el}
           </TouchableOpacity>
@@ -78,7 +77,7 @@ class Tabs extends Component {
 }
 var styles = StyleSheet.create({
   tabbarView: {
-    height: 50,
+    height: 80,
     opacity: 1,
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -87,7 +86,7 @@ var styles = StyleSheet.create({
   },
   iconView: {
     flex: 1,
-    height: 50,
+    height: 80,
     justifyContent: "center",
     alignItems: "center"
   },
